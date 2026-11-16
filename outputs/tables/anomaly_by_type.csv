@@ -1,0 +1,5 @@
+type,count
+Normal,4034
+Density outlier (DBSCAN noise),953
+Density outlier + extreme feature,12
+Extreme feature value,1

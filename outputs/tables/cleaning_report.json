@@ -1,0 +1,35 @@
+{
+  "rows_raw": 30450,
+  "duplicate_rows_removed": 450,
+  "duplicate_ids_removed": 0,
+  "invalid_values_set_missing": {
+    "fico": 60,
+    "annual_inc": 60,
+    "loan_amnt": 0,
+    "dti": 90,
+    "emp_length": 0
+  },
+  "missing_before_imputation": {
+    "loan_amnt": 0,
+    "annual_inc": 958,
+    "dti": 986,
+    "emp_length": 1200,
+    "purpose": 0,
+    "home_ownership": 0,
+    "state": 0,
+    "fico": 655
+  },
+  "imputation_strategy": {
+    "loan_amnt": "median",
+    "annual_inc": "median",
+    "dti": "median",
+    "fico": "median",
+    "emp_length": "median",
+    "purpose": "mode",
+    "home_ownership": "mode",
+    "state": "'UNK' label"
+  },
+  "rows_final": 30000,
+  "default_known_rows": 26966,
+  "overall_default_rate": 0.1408069420752058
+}

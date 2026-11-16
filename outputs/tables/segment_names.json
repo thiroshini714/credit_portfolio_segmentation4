@@ -1,0 +1,23 @@
+{
+  "kmeans": {
+    "0": "Cluster 0: Mid-range / mainstream",
+    "1": "Cluster 1: Shorter employment, Smaller loans, Lower income",
+    "2": "Cluster 2: Higher income, Higher credit score, Larger loans",
+    "3": "Cluster 3: High DTI, Lower credit score, Lower income",
+    "4": "Cluster 4: Larger loans, High loan-to-income"
+  },
+  "hierarchical": {
+    "0": "Cluster 0: High DTI, Lower credit score, Lower income",
+    "1": "Cluster 1: Mid-range / mainstream",
+    "2": "Cluster 2: Shorter employment, Smaller loans, Lower income",
+    "3": "Cluster 3: Higher credit score, Higher income, Larger loans",
+    "4": "Cluster 4: Larger loans, High loan-to-income, Higher income"
+  },
+  "dbscan": {
+    "-1": "Noise / unclustered (DBSCAN)",
+    "0": "Cluster 0: Shorter employment, Smaller loans, Lower income",
+    "1": "Cluster 1: Higher credit score, Higher income, Larger loans",
+    "2": "Cluster 2: High DTI, High loan-to-income, Lower credit score",
+    "3": "Cluster 3: High DTI, Lower credit score, Smaller loans"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "data_file": "data/raw/sample_synthetic_loans.csv",
+  "data_is_synthetic": true,
+  "column_mapping": {
+    "loan_id": "id",
+    "loan_amnt": "loan_amnt",
+    "annual_inc": "annual_inc",
+    "dti": "dti",
+    "emp_length": "emp_length",
+    "purpose": "purpose",
+    "home_ownership": "home_ownership",
+    "state": "addr_state",
+    "issue_date": "issue_d",
+    "default": "loan_status",
+    "fico": "mean(fico_range_low, fico_range_high)"
+  },
+  "random_state": 42,
+  "rows_raw": 30450,
+  "rows_clean": 30000,
+  "rows_clustered": 5000,
+  "feature_columns": [
+    "loan_amnt",
+    "annual_inc",
+    "dti",
+    "fico",
+    "emp_length",
+    "loan_to_income",
+    "purpose_car",
+    "purpose_credit_card",
+    "purpose_debt_consolidation",
+    "purpose_home_improvement",
+    "purpose_house",
+    "purpose_major_purchase",
+    "purpose_other",
+    "purpose_small_business",
+    "purpose_vacation",
+    "home_ownership_mortgage",
+    "home_ownership_other",
+    "home_ownership_own",
+    "home_ownership_rent"
+  ],
+  "log_transformed": [
+    "loan_amnt",
+    "annual_inc",
+    "loan_to_income"
+  ],
+  "rare_categories_grouped": {
+    "purpose": [],
+    "home_ownership": []
+  },
+  "pca": {
+    "n_components": 7,
+    "target": 0.9,
+    "variance_retained": 0.9270895960539245,
+    "variance_pc12": 0.6302760504769517,
+    "n_features": 19
+  },
+  "kmeans_k": 5,
+  "dbscan": {
+    "eps": 0.8737009650364745,
+    "min_samples": 10,
+    "n_clusters": 4,
+    "noise_pct": 19.3
+  },
+  "umap_computed": false,
+  "tsne_computed": true,
+  "has_default": true,
+  "primary_algorithm": "kmeans",
+  "versions": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit-learn": "1.8.0"
+  },
+  "runtime_seconds": 26.8
+}

@@ -1,0 +1,80 @@
+{
+  "insights": [
+    {
+      "title": "Default rates differ across segments",
+      "detail": "Cluster 3: High DTI, Lower credit score, Lower income has the highest historical default rate (25.8%) and Cluster 2: Higher income, Higher credit score, Larger loans the lowest (5.1%), a 5.0x gap. Portfolio average: 14.5%."
+    },
+    {
+      "title": "Is the default-rate difference real?",
+      "detail": "A chi-square test gives p = 9e-38 (Cramer's V = 0.20), so the difference between segments is statistically significant. Default was NOT used to build the clusters, so this is an independent check that the segments carry risk information."
+    },
+    {
+      "title": "Algorithm comparison",
+      "detail": "K-Means has the highest silhouette score (0.224). K-Means was selected as the primary segmentation (k = 5) because it gives a full, easy-to-explain partition; see the comparison tab for all three algorithms."
+    },
+    {
+      "title": "Dimensionality reduction",
+      "detail": "7 principal components retain 92.7% of the variance (target 90%); the first two components explain 63.0%."
+    },
+    {
+      "title": "Unusual borrower profiles",
+      "detail": "966 of 5,000 profiles (19.3%) were flagged (965 DBSCAN noise, 13 with an extreme feature). Their default rate is 17.7% vs 13.7% for other profiles. Flagged profiles are for manual review, not automatic rejection."
+    },
+    {
+      "title": "Geographic view",
+      "detail": "Among states with at least 100 resolved loans, NC has the highest default rate (15.6%) and AZ the lowest (12.9%). State was not used for clustering."
+    },
+    {
+      "title": "Portfolio trend",
+      "detail": "Default rate moves from 13.0% (2012 vintage) to 15.0% (2016 vintage). Recent vintages are still maturing, so compare like-for-like ages."
+    }
+  ],
+  "recommendations": [
+    {
+      "cluster": 0,
+      "segment": "Cluster 0: Mid-range / mainstream",
+      "risk_tier": "In line with portfolio",
+      "default_rate": 0.14516129032258066,
+      "share_of_portfolio_pct": 26.38,
+      "context": "main purpose: credit_card; typical housing: mortgage",
+      "recommendation": "Keep standard credit policy; monitor the segment for drift and test product tweaks (e.g. term or amount options)."
+    },
+    {
+      "cluster": 1,
+      "segment": "Cluster 1: Shorter employment, Smaller loans, Lower income",
+      "risk_tier": "In line with portfolio",
+      "default_rate": 0.1674074074074074,
+      "share_of_portfolio_pct": 14.98,
+      "context": "main purpose: car; typical housing: rent",
+      "recommendation": "Keep standard credit policy; monitor the segment for drift and test product tweaks (e.g. term or amount options)."
+    },
+    {
+      "cluster": 2,
+      "segment": "Cluster 2: Higher income, Higher credit score, Larger loans",
+      "risk_tier": "Lower risk",
+      "default_rate": 0.051233396584440226,
+      "share_of_portfolio_pct": 24.08,
+      "context": "main purpose: credit_card; typical housing: mortgage",
+      "recommendation": "Candidate for preferential pricing, pre-approved offers and cross-sell of larger or longer-term products, subject to normal credit policy."
+    },
+    {
+      "cluster": 3,
+      "segment": "Cluster 3: High DTI, Lower credit score, Lower income",
+      "risk_tier": "Higher risk",
+      "default_rate": 0.2577873254564984,
+      "share_of_portfolio_pct": 20.96,
+      "context": "main purpose: credit_card; typical housing: rent",
+      "recommendation": "Review underwriting for this segment: consider tighter limits or risk-based pricing, closer early-warning monitoring, and repayment-support outreach."
+    },
+    {
+      "cluster": 4,
+      "segment": "Cluster 4: Larger loans, High loan-to-income",
+      "risk_tier": "Lower risk",
+      "default_rate": 0.10894308943089431,
+      "share_of_portfolio_pct": 13.6,
+      "context": "main purpose: home_improvement; typical housing: mortgage",
+      "recommendation": "Candidate for preferential pricing, pre-approved offers and cross-sell of larger or longer-term products, subject to normal credit policy."
+    }
+  ],
+  "ethics_note": "Segments describe groups with similar financial characteristics. Cluster membership must not be used on its own to approve, decline or price an individual loan, and historical default rates do not guarantee future behaviour."
+}
